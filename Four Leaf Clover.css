@@ -1,0 +1,595 @@
+
+/* 
+Editer : N010
+Version : 1.0
+Time : 2022.12.18
+*/
+
+/************************* 
+    Basic Var
+*************************/
+:root{
+    --Stage-1: 1px;
+    --Stage-2: 3px;
+    --Stage-3: 5px;
+    --Stage-4: 10px;
+    --Stage-5: 15px;
+    --Stage-6: 20px;
+}
+:root{
+    /* 全透明 */
+    --Trans: #00000000;
+    /* RGB色 */
+    --RGB-CREAM-COLOURED: rgb(163, 158, 149);
+    --RGB-LIGHTER-GREEN: rgb(194, 201, 168);
+    --RGB-LIGHT-GREEN: rgb(171, 214, 202);
+    --RGB-BASIC-GREEN: rgb(115, 163, 125);
+    --RGB-BASIC-DARKER-GREEN: rgb(141, 176, 162);
+    --RGB-DARK-GREEN: rgb(103, 117, 94);
+    --RGB-DARKER-GREEN: rgb(45, 82, 52);
+    --RGB-Light1:rgb(242, 243, 241);
+    --RGB-DARK1: rgb(54, 54, 54);
+    /* 透明度色 */
+    --TransDark: #43434269;
+    --TransLight: #cecece6b;
+    --BLANK-WHITE: rgb(255,255,255);
+    --BLANK-BLACK:  rgb(0, 0, 0);
+    /* 色调 */
+    --BASIC-COLOR: var(--RGB-LIGHT-GREEN);
+    --BASIC-BALANCE-COLOR: var(--RGB-BASIC-GREEN);
+    --BASIC-DARKER-COLOR: var(--RGB-BASIC-DARKER-GREEN);
+    --BASIC-LIGHT-COLOR: var(--RGB-LIGHTER-GREEN);
+    --BASIC-DARK-COLOR: var(--RGB-DARK-GREEN);
+    --BASIC-DARK-DARK-COLOR: #629f9d31;
+    /* 圆角 */
+    --slider-thumb-radius: 0% !important;
+}
+body{
+    --h1-size: 1.4em;
+    --h2-size: 1.3em;
+    --h3-size: 1.2em;
+    --h4-size: 1.2em;
+    --h5-size: 1.12em;
+    --h6-size: 1.12em;
+}
+/* 
+    Light & Dark
+*/
+
+.theme-dark {
+    /* 配置变量 */
+    --divider-color-hover: var(--BASIC-COLOR);
+    --color-accent: var(--BASIC-COLOR); 
+    --color-accent-1: var(--BASIC-COLOR);    
+    --tag-color: var(--BASIC-DARKER-COLOR);
+
+    /* 自设变量 */
+    --Inline: var(--BASIC-LIGHT-COLOR);
+    --Active-Line-bg: var(--TransDark);     
+    --Active-Caret: var(--BASIC-DARK-COLOR);
+    --Button-Color: var(--RGB-DARK1);
+    --TAG-BG: var(--TransDark);
+    --button-font-color: var(--RGB-DARK1);
+    --Bold-Color: var(--BASIC-COLOR);  
+    --H1-COLOR: var(--BASIC-COLOR);
+    --H2-COLOR: var(--BASIC-LIGHT-COLOR);
+    --H3-COLOR: rgb(234, 216, 184);
+    --H4-COLOR: rgb(255, 255, 255);
+    --H5-COLOR: rgb(255, 255, 255);
+    --H6-COLOR: rgb(255, 255, 255);
+}
+.theme-light {
+    /* 配置变量 */
+    --divider-color-hover: var(--BASIC-COLOR);
+    --color-accent: var(--BASIC-COLOR); 
+    --color-accent-1: var(--BASIC-COLOR);    
+    --tag-color: var(--BASIC-BALANCE-COLOR);
+
+    /* 自设变量 */
+    --Inline: var(--BASIC-DARK-COLOR);
+    --Active-Line-bg: var(--TransLight);     
+    --Active-Caret: var(--BASIC-LIGHT-COLOR);
+    --Button-Color: var(--RGB-Light1);
+    --TAG-BG: var(--TransLight);
+    --Bold-Color: var(--BASIC-BALANCE-COLOR);
+    --H1-COLOR: 177, 223, 74;
+    --H2-COLOR: 185, 187, 90;
+    --H3-COLOR: 234, 216, 184;
+    --H4-COLOR: 255, 255, 255;
+    --H5-COLOR: 255, 255, 255;
+    --H6-COLOR: 255, 255, 255;
+}
+.vertical-tab-nav-item.is-active{
+    color: var(--Button-Color);
+    font-weight: bold;
+}
+button.mod-cta{
+    color: var(--Button-Color);
+    font-weight: bold;
+}
+.u-pop{
+    color: var(--BASIC-COLOR);
+}
+a{
+    color: var(--BASIC-COLOR);
+}
+a:hover{
+    color: var(--BASIC-LIGHT-COLOR);
+}
+input::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+
+/*********************** 
+    1. Inline Title
+***********************/
+div.inline-title::before{
+    content: "Title : ";
+    font-size: var(--Stage-4);
+    vertical-align: middle;
+    margin-right: var(--Stage-4);
+    color: var(--Inline);
+}
+div.inline-title{
+    font-size: var(--Stage-6);
+}
+div.inline-title::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+
+
+/*********************
+    2. Active Line
+*********************/
+.cm-lineNumbers .cm-active.cm-gutterElement {
+    color: var(--RGB-CREAM-COLOURED);
+    background: var(--Trans);
+}
+div.cm-active{
+    caret-color: var(--Active-Caret);
+    background-color: var(--Active-Line-bg);
+}
+
+/******************* 
+    3. Statu Bar
+*******************/
+
+.status-bar{
+    border-radius: 0%;
+}
+.status-bar:not(:hover) .status-bar-item {
+    opacity: 0.25;
+    transition: opacity .40s ease-in-out;
+}
+span.various-complements__footer.various-complements__footer__current-vault,
+span.various-complements__footer.various-complements__footer__internal-link,
+span.various-complements__footer.various-complements__footer__front-matter,
+span.various-complements__footer.various-complements__footer__current-file
+{
+    display: none;
+}
+.various-complements__footer::before
+{
+    width: 15px;
+    margin-top: -3px;
+    margin-left: -21px;
+}
+div.status-bar-item.plugin-various-complements{
+    margin-right: 4px;
+}
+.nav-buttons-container {
+    justify-content: center !important;
+}
+
+
+/**************** 
+    4. Tab 
+****************/
+.workspace-tab-header{
+    border-radius: 5px;
+}
+.is-active > .workspace-tab-header-inner > .workspace-tab-header-inner-title::before {
+    color: var(--BASIC-COLOR);
+    content: ' ◈ ';
+    margin-left: 5px;
+    animation: breath 1.5s infinite alternate; 
+}
+@keyframes breath { 
+ 0%   { opacity: 0.25; }
+ 100% { opacity: 0.05; }
+}
+.workspace-tab-header-inner > .workspace-tab-header-status-container
+{
+    display: none !important;
+}
+
+
+/**************** 
+    5. Meta
+*****************/
+.cm-atom{
+    color: #E0DE71;
+}
+.cm-keyword{
+    color: #e9b35f;
+}
+span.token.number{
+    color: var(--BASIC-COLOR);
+}
+
+
+/****************** 
+    6. List
+******************/
+.list-bullet:after {
+    border-radius: 0px !important;
+}
+
+/***************
+    7. darios
+***************/
+.checkbox-container:after {
+	margin-top: 2px;
+    border-radius: 0% !important;
+}
+.checkbox-container {
+    border-radius: 10% !important;
+}
+input[type='range'] {
+    height: 18px;
+}
+.meta-bind-plugin-slider-input {
+	height: 18px !important;	
+}
+
+/**************
+    8. PreMode
+**************/
+/* 1 加粗样式 */
+.cm-strong{
+    color: var(--Bold-Color);
+}
+/* 2 高亮样式 */
+.markdown-preview-view mark ,
+.cm-s-obsidian span.cm-formatting-highlight, 
+.cm-s-obsidian span.cm-highlight 
+{
+    padding: 0 0.5rem;
+    background-color: #e9b35f;
+    color: black;
+    font-weight: 600;
+    font-family: 'JetBrains Mono';
+}
+.cm-formatting-highlight{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+/* 3 Tag */
+.cm-hashtag {
+    background-color: var(--TAG-BG);
+    padding: 0%;
+}
+/* 4 Link */
+.cm-url:hover 
+{
+    text-decoration: none !important;
+}
+.markdown-source-view.mod-cm6 .cm-underline {
+    text-decoration-line: none !important;
+}
+span.cm-hmd-internal-link:hover{
+    text-decoration-line: none !important;
+}
+.cm-underline{
+    color: var(--BASIC-DARK-COLOR) !important;
+    font-weight: bold;
+}
+.cm-underline:hover{
+    text-decoration-line: none !important;
+    color: var(--BASIC-COLOR) !important;
+    font-weight: bold;
+}
+span.is-unresolved > .cm-underline{
+    text-decoration: none !important;
+    color: #E0DE71 !important;
+    font-weight: bold;
+}
+span.is-unresolved > .cm-underline:hover{
+    text-decoration: none !important;
+    color: #e9b35f !important;
+    font-weight: bold;
+}
+/* 5 p */
+.markdown-source-view.mod-cm6 ::selection{
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+/* 7 Head */
+.cm-formatting-header{
+    padding-left: 0px !important;
+}
+.HyperMD-header{
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+.HyperMD-header-1{
+    border-left: 1px solid !important;
+    border-right: 6px solid !important;    
+    border-color: var(--H1-COLOR) !important ;
+}
+.HyperMD-header-2{
+    border-bottom: 1px solid var(--text-faint);
+    border-right: 4px solid !important;
+    border-right-color: var(--H2-COLOR)  !important;
+}
+.HyperMD-header-3{
+    border-right: 3px solid !important;
+    border-right-color: var(--H3-COLOR) !important;
+}
+.HyperMD-header-4{
+    border-right: 2px solid !important;
+    border-right-color: var(--H4-COLOR) !important ;
+}
+.HyperMD-header-5 {
+    border-right: 1.25px solid !important;
+    border-right-color: var(--H5-COLOR) !important ;
+}
+.HyperMD-header-6{
+    border-right: 0.75px solid !important;
+    border-right-color: var(--H6-COLOR) !important;
+}
+.HyperMD-header-4::before{
+    content: "H4▸ ";
+    font-size: 12px;
+}
+.HyperMD-header-5::before{
+    content: "H5▸ ";
+    font-size: 12px;
+}
+.HyperMD-header-6::before{
+    content: "H6▸ ";
+    font-size: 12px;
+}
+.markdown-preview-view h2 {
+    font-size: 1.6rem;
+    line-height: 36px;
+    padding-top: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--text-faint);
+}
+.HyperMD-header .cm-header-1{
+    font-size: inherit !important;
+    margin-left: 3px;
+    padding-left: 15px;
+    color: var(--H1-COLOR);
+    padding-bottom: 0px !important;
+}
+.HyperMD-header .cm-header-2{
+    color: var(--H2-COLOR);
+    padding-bottom: 0px !important;
+}
+.HyperMD-header .cm-header-3{
+    color: var(--H3-COLOR);
+    padding-bottom: 0px !important;
+}
+.HyperMD-header .cm-header-4{
+    color: var(--H4-COLOR);
+    padding-bottom: 0px !important;
+}
+.HyperMD-header .cm-header-5{
+    color: var(--H5-COLOR);
+    padding-bottom: 0px !important;
+}
+.HyperMD-header .cm-header-6{
+    color: var(--H6-COLOR);
+    padding-bottom: 0px !important;
+}
+.HyperMD-header .cm-header-2,
+.HyperMD-header .cm-header-3, 
+.HyperMD-header .cm-header-4, 
+.HyperMD-header .cm-header-5, 
+.HyperMD-header .cm-header-6 {
+    font-size: inherit !important;
+}
+
+
+
+
+/********************* 
+    9. ReadMode
+*********************/
+/* 1 加粗样式 */
+strong{
+    color: var(--Bold-Color);
+}
+strong::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+/* 2 高亮样式 */
+.markdown-rendered mark
+{
+    padding: 0 0.5rem;
+    background-color: #e9b35f;
+    color: black;
+    font-weight: 600;
+    font-family: 'JetBrains Mono';
+}
+mark::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+/* 3 Tag */
+.tag::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+/* 4 Link */
+a,
+a.external-link,
+a.internal-link{
+    text-decoration: none !important;
+    color: var(--BASIC-DARK-COLOR);
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: none !important;
+    color: var(--BASIC-COLOR);
+    font-weight: bold;
+}
+a.is-unresolved{
+    text-decoration: none !important;
+    color: #E0DE71 !important;
+    font-weight: bold;
+}
+a.is-unresolved:hover{
+    text-decoration: none !important;
+    color: #e9b35f !important;
+    font-weight: bold;
+}
+a::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+/* 5 p */
+p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+/* 6 hr */
+hr{
+    border-color: var(--BASIC-DARK-DARK-COLOR) !important;
+}
+/* 7 Head */
+
+h1{
+    font-size: var(--h1-size) !important;
+    padding-left: 15px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    border-left: 1px solid !important;
+    border-right: 5px solid !important;    
+    border-color: var(--H1-COLOR) !important ;
+    color: var(--H1-COLOR) !important;
+}
+h2{
+    font-size: var(--h2-size) !important;
+    color: var(--H2-COLOR) !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-right: 4px solid !important;
+    border-right-color: var(--H2-COLOR)  !important;
+}
+h3{
+    font-size: var(--h3-size) !important;
+    color: var(--H3-COLOR) !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-right: 3px solid !important;
+    border-right-color: var(--H3-COLOR) !important ;
+}
+h4 {
+    font-size: var(--h4-size) !important;
+    color: var(--H4-COLOR) !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-right: 2px solid !important;
+    border-right-color: var(--H4-COLOR) !important ;
+}
+h5 {
+    font-size: var(--h5-size) !important;
+    color: var(--H5-COLOR) !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-right: 1px solid !important;
+    border-right-color: var(--H5-COLOR) !important ;
+}
+h6 {
+    font-size: var(--h6-size) !important;
+    color: var(--H6-COLOR) !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-right: 1px solid !important;
+    border-right-color: var(--H6-COLOR) !important ;
+}
+h1::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+h2::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+h3::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+h4::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+h5::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+h6::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+h4::before{
+    content: "H4▸ ";
+    font-size: 12px;
+}
+h5::before{
+    content: "H5▸ ";
+    font-size: 12px;
+}
+h6::before{
+    content: "H6▸ ";
+    font-size: 12px;
+}
+/* 8.List */
+li::selection {
+    color: var(--RGB-DARK1);
+    background-color: var(--BASIC-COLOR);
+}
+
+
+
+
+/* 
+    404. Unknown
+*/
+/* 
+.ͼ1 .cm-cursorLayer {
+    display: list-item;
+
+}
+.ͼ1 .cm-cursorLayer::marker{
+    color: var(--RGB-DARK1);
+} 
+*/
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb{
+    background-color: #647f8a1c;
+}
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:hover{
+    background-color: #647f8a4c;
+}
